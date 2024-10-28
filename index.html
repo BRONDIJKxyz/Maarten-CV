@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maarten Brondijk - Supply Chain Expert</title>
-    <link rel="stylesheet" href="src/styles/main.css">
-    <link rel="stylesheet" href="src/styles/home.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
+    <nav class="navbar">
         <div class="container">
             <a href="/" class="logo">MB</a>
             <div class="nav-links">
@@ -22,18 +22,76 @@
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Maarten Brondijk</h1>
-            <h2>Supply Chain & Logistics Expert</h2>
-            <p>Optimizing global supply chains through strategic sourcing and cost management</p>
-            <div class="cta-buttons">
-                <a href="#consulting" class="btn btn-primary">Book a Consultation</a>
-                <a href="#" class="btn btn-secondary">Download CV</a>
+    <main>
+        <section id="hero" class="hero">
+            <div class="container">
+                <h1>Maarten Brondijk</h1>
+                <h2>Supply Chain & Logistics Expert</h2>
+                <p class="hero-text">Optimizing global supply chains through strategic sourcing and cost management</p>
+                <div class="cta-buttons">
+                    <a href="#consulting" class="btn btn-primary">Book a Consultation</a>
+                    <a href="#" class="btn btn-secondary">Download CV</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Continue with other sections using the new classes -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p class="about-text">Supply Chain & Logistics Expert with a passion for optimizing global operations and driving sustainable business growth.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">30%</span>
+                        <span class="stat-label">Average Cost Reduction</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🌐</div>
+                        <h3>Global Sourcing Strategy</h3>
+                        <p>Optimize your sourcing network and reduce costs while maintaining quality standards.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Supply Chain Optimization</h3>
+                        <p>Streamline operations and improve efficiency across your entire supply chain.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💰</div>
+                        <h3>Cost Management</h3>
+                        <p>Identify and implement cost-saving opportunities without compromising quality.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔄</div>
+                        <h3>Process Improvement</h3>
+                        <p>Enhance operational workflows and implement best practices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="cta">
+            <div class="container">
+                <h2>Ready to Optimize Your Supply Chain?</h2>
+                <p>Let's discuss how I can help improve your operations</p>
+                <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
