@@ -1,9 +1,16 @@
 :root {
   --primary-color: #2c3e50;
   --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
   --text-color: #333;
   --light-bg: #f8f9fa;
+  --dark-bg: #343a40;
   --spacing: 2rem;
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+  --box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 * {
@@ -16,6 +23,7 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 .container {
@@ -24,10 +32,64 @@ body {
   padding: 0 var(--spacing);
 }
 
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Section Styling */
+section {
+  padding: 5rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  margin-bottom: 0.5rem;
+}
+
+.underline {
+  height: 4px;
+  width: 70px;
+  background: var(--secondary-color);
+  margin: 0 auto;
+}
+
 /* Navigation */
-nav {
+.navbar {
   background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: var(--box-shadow);
   padding: 1rem 0;
   position: fixed;
   width: 100%;
@@ -35,7 +97,7 @@ nav {
   z-index: 1000;
 }
 
-nav .container {
+.navbar .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,11 +112,23 @@ nav .container {
   text-decoration: none;
   color: var(--text-color);
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: var(--transition);
+  position: relative;
 }
 
-.nav-links a:hover {
-  color: var(--secondary-color);
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--secondary-color);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .logo {
@@ -64,15 +138,23 @@ nav .container {
   color: var(--primary-color);
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 /* Buttons */
 .btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   margin: 0.5rem;
+  cursor: pointer;
+  text-align: center;
 }
 
 .btn-primary {
@@ -83,10 +165,94 @@ nav .container {
 .btn-secondary {
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
+  background: transparent;
+}
+
+.btn-light {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--dark-color);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.btn-outline {
+  border: 1px solid currentColor;
+  background: transparent;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow);
 }
 
+/* Footer */
+footer {
+  background: var(--dark-bg);
+  color: var(--light-color);
+  padding: 3rem 0 1rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.footer-logo a {
+  color: var(--light-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--light-color);
+  opacity: 0.8;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
