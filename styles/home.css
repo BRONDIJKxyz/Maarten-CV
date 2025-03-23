@@ -25,11 +25,14 @@
 
 /* Split Hero Section */
 .split-hero {
-    height: 100vh;
+    height: 70vh;
     display: flex;
     flex-direction: row;
     margin-top: 0;
     padding: 0;
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
 }
 
 .split-side {
@@ -40,6 +43,7 @@
     padding: 2rem;
     position: relative;
     overflow: hidden;
+    opacity: 1;
 }
 
 .split-side::before {
@@ -412,10 +416,20 @@
     .split-hero {
         flex-direction: column;
         height: auto;
+        min-height: auto;
     }
     
     .split-side {
-        min-height: 50vh;
+        min-height: 40vh;
+        padding: 3rem 1.5rem;
+    }
+    
+    .split-side .content {
+        max-width: 90%;
+    }
+    
+    .split-side h2 {
+        font-size: 2rem;
     }
     
     .stats-grid {
