@@ -73,22 +73,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            // We don't prevent default anymore to allow the form to submit to Formspree
             
-            // Simple form validation
+            // We still do client-side validation
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
             
             if (!name || !email || !message) {
+                e.preventDefault(); // Prevent form submission if validation fails
                 alert('Please fill in all required fields');
                 return;
             }
             
-            // Here you would typically send the form data to a server
-            // For now, we'll just show a success message
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
+            // Form will be submitted to Formspree automatically
+            // No need for additional JavaScript handling
         });
     }
 });
