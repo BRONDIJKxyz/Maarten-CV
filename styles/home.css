@@ -440,3 +440,93 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Media Queries for Home Page Specific Elements */
+@media screen and (max-width: 992px) {
+    .split-hero {
+        height: 60vh;
+    }
+    
+    .about-content {
+        gap: 2rem;
+    }
+    
+    .placeholder-image {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .split-hero {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .split-side {
+        padding: 4rem 1rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-text {
+        flex: 1;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-container {
+        flex-direction: column;
+    }
+    
+    .skills-category {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .contact-info, .contact-form {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .project-card {
+        padding: 1rem;
+    }
+    
+    .project-content h3 {
+        font-size: 1.4rem;
+    }
+    
+    .tech-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .project-links a {
+        margin: 0.3rem 0;
+    }
+}
