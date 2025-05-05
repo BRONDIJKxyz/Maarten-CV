@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (submitButton) {
                 submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                 submitButton.disabled = true;
+                submitButton.classList.add('btn-loading');
             }
             
             // Form will be submitted to Formspree automatically
@@ -160,4 +161,38 @@ document.addEventListener('DOMContentLoaded', function() {
             skillObserver.observe(bar);
         });
     }
+    
+    // Scroll to top button functionality
+    const scrollToTopButton = document.getElementById('scrollToTop');
+    if (scrollToTopButton) {
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopButton.classList.add('visible');
+            } else {
+                scrollToTopButton.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top when button is clicked
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        const navLinks = document.querySelector('.nav-links');
+        const menuToggle = document.querySelector('.menu-toggle');
+        
+        if (navLinks && navLinks.classList.contains('active') && 
+            !navLinks.contains(e.target) && 
+            !menuToggle.contains(e.target)) {
+            navLinks.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+    });
 });
